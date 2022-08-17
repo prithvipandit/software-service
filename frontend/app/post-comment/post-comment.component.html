@@ -1,0 +1,32 @@
+<div>
+    <div class="d-flex mt-2" style="margin-left: 20px;">
+        <h2 class="display-5">Software Requirements</h2>
+    </div>
+
+    <form [formGroup]="resultForm"  (ngSubmit)="onSubmit()" style="width: 75%; margin-left:30px ;margin-top:30px">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Tittle </label>
+            <input formControlName="subject" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Software Tittle">
+          </div>
+          <label for="exampleFormControlInput1" class="form-label">Choose Technology and Related Project</label>
+          <select  formControlName="company" class="form-select" aria-label="Default select example">
+         <!-- <ng-template *ngFor="let product of products">  <option value="{{ product.productID }}">{{ product.productID  }} {{product.productName}} </option></ng-template>  -->
+        
+         <option *ngFor="let product of products"  [value]="product.productID" >
+          {{product.productName}} || {{product.productDetails}}
+        </option>
+         
+        
+        </select>
+          
+          <div class="mb-3 mt-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Requirements</label>
+            <textarea formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+          </div>
+          <p style="color:rgb(10, 170, 48) ;">{{msgs}}</p>
+          <button type="submit" class="btn btn-dark mt-4 mb-2" style="margin-right: 20px;">Cancel</button>
+          <button type="submit" class="btn btn-success mt-4 mb-2">Add Topic</button>
+    </form>
+    
+</div>
+

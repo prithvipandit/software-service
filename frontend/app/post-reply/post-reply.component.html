@@ -1,0 +1,23 @@
+<div>
+    <div class="d-flex mt-2" style="margin-left: 20px;">
+        <h3 class="display-5">Reply for gathering Requirements</h3>
+    </div>
+
+    <form [formGroup]="resultForm"  (ngSubmit)="onSubmit()" style="width: 75%; margin-left:30px ;margin-top:30px">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Issues Faced</label>
+            <input formControlName="subject" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Subject goes here">
+          </div>
+       
+          
+          
+          <div class="mb-3 mt-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Their Description</label>
+            <textarea formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
+          </div>
+          <p style="color:rgb(10, 170, 48) ;">{{msgs}}</p>
+          <button type="submit" class="btn btn-dark mt-4 mb-2" style="margin-right: 20px;">Cancel</button>
+          <button type="submit" class="btn btn-success mt-4 mb-2">Add Reply</button>
+    </form>
+    
+</div>
